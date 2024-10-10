@@ -1,0 +1,5 @@
+<p>
+  Username: {{user.name}}
+</p>
+<child [contact]="user.contact" (delete)="deleteContact($event)">
+</child>

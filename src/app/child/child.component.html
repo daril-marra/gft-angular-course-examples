@@ -1,0 +1,6 @@
+<p *ngIf="contact">
+  {{ contact.type + ": " + contact.value }}
+</p>
+<button (click)="delete.emit(contact)">
+  DELETE CONTACT
+</button>
