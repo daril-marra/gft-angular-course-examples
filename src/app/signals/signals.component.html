@@ -1,0 +1,16 @@
+<h1>Signals</h1>
+
+<h2>Computed signals</h2>
+<p>
+  <strong>Price: </strong>
+  <input [ngModel]="price()" (ngModelChange)="price.set($event)" type="number">
+</p>
+<p>
+  <strong>Quantity: </strong>
+  <input [ngModel]="quantity()" (ngModelChange)="quantity.set($event)" type="number">
+</p>
+<p id="totalCost" style="width: min-content; margin: 20px;">{{totalCost()}}</p>
+
+<hr>
+<app-signals-child [birthDate]="birthDate" [lastName]="'Marra'" [gender]="'M'" (addQuantity)="onQuantityAdd($event)"
+  (removeQuantity)="onQuantityAdd($event)" (userResponse)="handleUserResponse($event)"></app-signals-child>

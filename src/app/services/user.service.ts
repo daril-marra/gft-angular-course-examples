@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../data-model/user';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +23,17 @@ export class UserService {
       error: (err) => this.source.next(undefined),
     });
     return obs;
+  }
+
+  getStub(): Observable<User> {
+    const user: User = {
+      name: "Daril",
+      dateOfBirth: new Date(),
+      contact: {
+        type: "email",
+        value: "daril@gft.com"
+      }
+    }
+    return of(user)
   }
 }
